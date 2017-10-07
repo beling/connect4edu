@@ -23,10 +23,12 @@ struct Board {
 
     Board();   //construct empty board
 
+	// check if it is possible to make a move at column c
     bool can_move(int c) const {
         return pieces_at_col[c] < ROWS_NUM;
     }
 
+	// check who has made last move, return "X" or "O"
     char who_play_recent() const {
         return "XO"[pieces_on_board % 2];
     }
